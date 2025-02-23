@@ -1,4 +1,4 @@
-package v5.shapes;
+package v4.shapes;
 
 import java.awt.Color;
 
@@ -38,10 +38,6 @@ public class Point extends Shape {
     public Point(int x, int y) {
         this(x, y, Shape.defaultDrawColor);
     }
-
-public Point(Point p) {
-    this(p.getX(), p.getY(), p.getDrawColor());
-}
 
     public void draw(Image image) {
         image.setPixel(x, y, drawColor);

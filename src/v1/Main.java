@@ -19,6 +19,7 @@ public class Main {
         int[] y_values = {310, 335, 370, 340, 399};
 //        Shapes.drawPolyLine(x_values, y_values, Color.PINK );
         Shapes.drawPolygon(x_values, y_values, Color.PINK );
-        Shapes.image.Save("test1.png");
+
+        Shapes.image.save("test1.png");
     }
 }

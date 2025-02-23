@@ -1,23 +1,20 @@
-package v2.shapes;
+package v3.shapes;
 
-import java.awt.*;
+import java.awt.Color;
 
-public class Square {
-    public static final Color defaultDrawColor = Color.BLACK;
+public class Square extends Shape {
 
     private Point topLeft;
     private int width;
-
-    private Color drawColor;
 
     public Square(Point topLeft, int width) {
         this(topLeft, width, defaultDrawColor);
     }
 
     public Square(Point topLeft, int width, Color drawColor) {
+        super(drawColor);
         this.topLeft = topLeft;
         this.width = width;
-        this.drawColor = drawColor;
     }
 
     public Point getTopLeft() {
@@ -34,14 +31,6 @@ public class Square {
 
     public void setWidth(int width) {
         this.width = width;
-    }
-
-    public Color getDrawColor() {
-        return drawColor;
-    }
-
-    public void setDrawColor(Color drawColor) {
-        this.drawColor = drawColor;
     }
 
     public void draw(Image image) {

@@ -36,32 +36,32 @@ public class Image {
         this.height = height;
         this.backgroundColor = backgroundColor;
         bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        Clear(this.backgroundColor);
+        clear(this.backgroundColor);
     }
 
-    public void Clear(Color clearColor) {
+    public void clear(Color clearColor) {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                SetPixel(i, j, clearColor);
+                setPixel(i, j, clearColor);
             }
         }
     }
 
-    public Color GetPixel(int x, int y) {
+    public Color getPixel(int x, int y) {
         if (x >= 0 && x < this.width && y >= 0 && y < this.height) {
-            return GetPixel(x, y);
+            return getPixel(x, y);
         }
         // throw exception?
         return backgroundColor;
     }
 
-    public void SetPixel(int x, int y, Color drawColor) {
+    public void setPixel(int x, int y, Color drawColor) {
         if (x >= 0 && x < this.width && y >= 0 && y < this.height) {
             bufferedImage.setRGB(x, y, drawColor.getRGB());
         }
     }
 
-    public void Save(String filename) {
+    public void save(String filename) {
         try {
             File outputFile = new File(filename);
             ImageIO.write(bufferedImage, "PNG", outputFile);

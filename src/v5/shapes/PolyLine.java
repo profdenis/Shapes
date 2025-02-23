@@ -1,29 +1,24 @@
-package v2.shapes;
+package v5.shapes;
 
 import java.awt.Color;
 
-public class PolyLine {
-    public static final Color defaultDrawColor = Color.BLACK;
-
+public class PolyLine extends Shape {
     private Point[] points;
-
-    private Color drawColor;
 
     public PolyLine(Point[] points) {
         this(points, defaultDrawColor);
     }
 
     public PolyLine(Point[] points, Color drawColor) {
+        super(drawColor);
         this.points = points;
         this.drawColor = drawColor;
     }
 
-    public Color getDrawColor() {
-        return drawColor;
-    }
-
-    public void setDrawColor(Color drawColor) {
-        this.drawColor = drawColor;
+    public PolyLine(PolyLine other) {
+        this(other.points, other.drawColor);
+        this.points = new Point[other.points.length];
+        System.arraycopy(other.points, 0, this.points, 0, other.points.length);
     }
 
     public Point[] getPoints() {

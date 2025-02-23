@@ -1,25 +1,22 @@
-package v2.shapes;
+package v4.shapes;
 
-import java.awt.*;
+import java.awt.Color;
 
-public class Rectangle {
-    public static final Color defaultDrawColor = Color.BLACK;
+public class Rectangle extends Shape {
 
     private Point topLeft;
     private int width;
     private int height;
-
-    private Color drawColor;
 
     public Rectangle(Point topLeft, int width, int height) {
         this(topLeft, width, height, defaultDrawColor);
     }
 
     public Rectangle(Point topLeft, int width, int height, Color drawColor) {
+        super(drawColor);
         this.topLeft = topLeft;
         this.width = width;
         this.height = height;
-        this.drawColor = drawColor;
     }
 
     public Point getTopLeft() {
@@ -44,14 +41,6 @@ public class Rectangle {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public Color getDrawColor() {
-        return drawColor;
-    }
-
-    public void setDrawColor(Color drawColor) {
-        this.drawColor = drawColor;
     }
 
     public void draw(Image image) {

@@ -1,10 +1,16 @@
-package v5;
+package v3;
 
-import v5.shapes.*;
+import v3.shapes.*;
 
 import java.awt.Color;
 
 public class Main {
+    /**
+     * The main method initializes an image, draws various shapes onto it, 
+     * and then saves the resulting image to a file.
+     * 
+     * @param args Command line arguments (not used).
+     */
     public static void main(String[] args) {
         int width = 400;
         Image image = new Image(width);
@@ -45,10 +51,10 @@ public class Main {
         };
 //        PolyLine polyLine = new PolyLine(points, Color.PINK);
 //        polyLine.draw(image);
-//
-        Polygon polygon = new Polygon(points, Color.CYAN);
-        polygon.draw(image);
 
-        image.save("test5.png");
+//        Polygon polygon = new Polygon(points, Color.CYAN);
+//        polygon.draw(image);
+
+        image.save("test3.png");
     }
 }

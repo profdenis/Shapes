@@ -1,4 +1,4 @@
-package v5.shapes;
+package v4.shapes;
 
 import java.awt.Color;
 
@@ -24,10 +24,5 @@ public class HLine extends Line {
 
     public HLine(Point start, int width) {
         this(start, width, v5.shapes.Shape.defaultDrawColor);
-    }
-
-    public HLine(HLine other) {
-        super(other.getStart(), other.getEnd(), other.getDrawColor());
-        this.width = other.getWidth();
     }
 }

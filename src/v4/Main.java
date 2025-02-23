@@ -1,6 +1,6 @@
-package v5;
+package v4;
 
-import v5.shapes.*;
+import v4.shapes.*;
 
 import java.awt.Color;
 
@@ -45,10 +45,10 @@ public class Main {
         };
 //        PolyLine polyLine = new PolyLine(points, Color.PINK);
 //        polyLine.draw(image);
-//
-        Polygon polygon = new Polygon(points, Color.CYAN);
-        polygon.draw(image);
 
-        image.save("test5.png");
+//        Polygon polygon = new Polygon(points, Color.CYAN);
+//        polygon.draw(image);
+
+        image.save("test4.png");
     }
 }

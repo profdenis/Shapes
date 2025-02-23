@@ -1,26 +1,28 @@
-package v2.shapes;
+package v5.shapes;
 
-import java.awt.Color;
+import java.awt.*;
 
-public class Triangle {
-
-    private static final Color defaultDrawColor = Color.BLACK;
-
+public class Triangle extends Shape {
     private Point a;
     private Point b;
     private Point c;
-
-    private Color drawColor;
 
     public Triangle(Point a, Point b, Point c) {
         this(a, b, c, defaultDrawColor);
     }
 
     public Triangle(Point a, Point b, Point c, Color drawColor) {
+        super(drawColor);
         this.a = a;
         this.b = b;
         this.c = c;
-        this.drawColor = drawColor;
+    }
+    
+    public Triangle(Triangle other) {
+        super(other.drawColor);
+        this.a = new Point(other.a);
+        this.b = new Point(other.b);
+        this.c = new Point(other.c);
     }
 
     public Point getA() {
@@ -45,14 +47,6 @@ public class Triangle {
 
     public void setC(Point c) {
         this.c = c;
-    }
-
-    public Color getDrawColor() {
-        return drawColor;
-    }
-
-    public void setDrawColor(Color drawColor) {
-        this.drawColor = drawColor;
     }
 
     public void draw(Image image) {

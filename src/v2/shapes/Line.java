@@ -43,11 +43,11 @@ public class Line {
         this.drawColor = drawColor;
     }
 
-    public void Draw(Image image) {
+    public void draw(Image image) {
         // ligne verticale, il faut éviter une division par 0
         if (start.getX() == end.getX()) {
             VLine vline = new VLine(start, Math.abs(end.getY() - start.getY()) + 1, drawColor);
-            vline.Draw(image);
+            vline.draw(image);
             return;
         }
 
@@ -68,7 +68,7 @@ public class Line {
 
         for (int y = minY; y <= maxY; y++) {
             int x = (int) Math.round((y - intercept) / slope);
-            image.SetPixel(x, y, color);
+            image.setPixel(x, y, color);
         }
     }
 
@@ -78,7 +78,7 @@ public class Line {
 
         for (int x = minX; x <= maxX; x++) {
             int y = (int) Math.round(slope * x + intercept);
-            image.SetPixel(x, y, color);
+            image.setPixel(x, y, color);
         }
     }
 

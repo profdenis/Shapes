@@ -1,22 +1,19 @@
-package v2.shapes;
+package v3.shapes;
 
 import java.awt.Color;
 
-public class HLine {
-    public static final Color defaultDrawColor = Color.BLACK;
-
+public class HLine extends Shape {
     private Point start;
     private int width;
-    private Color drawColor;
 
     public HLine(Point start, int width) {
         this(start, width, defaultDrawColor);
     }
 
     public HLine(Point start, int width, Color drawColor) {
+        super(drawColor);
         this.start = start;
         this.width = width;
-        this.drawColor = drawColor;
     }
 
     public Point getStart() {
@@ -33,14 +30,6 @@ public class HLine {
 
     public void setWidth(int width) {
         this.width = width;
-    }
-
-    public Color getDrawColor() {
-        return drawColor;
-    }
-
-    public void setDrawColor(Color drawColor) {
-        this.drawColor = drawColor;
     }
 
     public void draw(Image image) {

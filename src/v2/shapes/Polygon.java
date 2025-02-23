@@ -34,9 +34,9 @@ public class Polygon {
         this.points = points;
     }
 
-    public void Draw(Image image) {
-        new PolyLine(points, drawColor).Draw(image);
-        new Line(points[0], points[points.length - 1], drawColor).Draw(image);
+    public void draw(Image image) {
+        new PolyLine(points, drawColor).draw(image);
+        new Line(points[0], points[points.length - 1], drawColor).draw(image);
     }
 
 

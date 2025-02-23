@@ -1,4 +1,4 @@
-package v5.shapes;
+package v3.shapes;
 
 import java.awt.Color;
 
@@ -16,12 +16,7 @@ public class Line extends Shape {
         this(start, end, Shape.defaultDrawColor);
     }
 
-    public Line(Line other) {
-        super(other.drawColor);
-        this.start = new Point(other.start.getX(), other.start.getY());
-        this.end = new Point(other.end.getX(), other.end.getY());
-    }
-    
+
     public Point getStart() {
         return start;
     }

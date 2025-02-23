@@ -46,7 +46,7 @@ public class Point {
         this.drawColor = drawColor;
     }
 
-    public void Draw(Image image) {
-        image.SetPixel(x, y, drawColor);
+    public void draw(Image image) {
+        image.setPixel(x, y, drawColor);
     }
 }

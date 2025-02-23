@@ -11,7 +11,7 @@ public class Shapes {
     }
 
     public static void drawPoint(int x, int y, Color color) {
-        image.SetPixel(x, y, color);
+        image.setPixel(x, y, color);
     }
 
     public static void drawHorizontalLine(int x1, int y1, int width) {
@@ -21,6 +21,12 @@ public class Shapes {
     public static void drawHorizontalLine(int x1, int y1, int width, Color color) {
         for (int i = 0; i < width; i++) {
             drawPoint(x1 + i, y1, color);
+        }
+    }
+
+    public static void drawVerticalLine(int x1, int y1, int height) {
+        for (int j = 0; j < height; j++) {
+            drawPoint(x1, y1 + j, defaultColor);
         }
     }
 
@@ -59,7 +65,7 @@ public class Shapes {
 
         for (int y = minY; y <= maxY; y++) {
             int x = (int) Math.round((y - intercept) / slope);
-            image.SetPixel(x, y, color);
+            image.setPixel(x, y, color);
         }
     }
 
@@ -69,7 +75,7 @@ public class Shapes {
 
         for (int x = minX; x <= maxX; x++) {
             int y = (int) Math.round(slope * x + intercept);
-            image.SetPixel(x, y, color);
+            image.setPixel(x, y, color);
         }
     }
 
@@ -133,17 +139,17 @@ public class Shapes {
 
         for (int i = 0; i <= cos45; i++) {
             int j = (int) Math.round(Math.sqrt(radius * radius - i * i));
-            image.SetPixel(x + i, y + j, color); // point 1
-            image.SetPixel(x - i, y + j, color); // point 2: symétrie du point 1 par rapport à l'axe Y
+            image.setPixel(x + i, y + j, color); // point 1
+            image.setPixel(x - i, y + j, color); // point 2: symétrie du point 1 par rapport à l'axe Y
 
-            image.SetPixel(x + i, y - j, color); // point 3: symétrie du point 1 par rapport à l'axe X
-            image.SetPixel(x - i, y - j, color); // point 4: symétrie du point 3 par rapport à l'axe Y
+            image.setPixel(x + i, y - j, color); // point 3: symétrie du point 1 par rapport à l'axe X
+            image.setPixel(x - i, y - j, color); // point 4: symétrie du point 3 par rapport à l'axe Y
 
-            image.SetPixel(x + j, y + i, color); // point 5: symétrie du point 1 par rapport à la diagonale 45°
-            image.SetPixel(x + j, y - i, color); // point 6: symétrie du point 5 par rapport à l'axe X
+            image.setPixel(x + j, y + i, color); // point 5: symétrie du point 1 par rapport à la diagonale 45°
+            image.setPixel(x + j, y - i, color); // point 6: symétrie du point 5 par rapport à l'axe X
 
-            image.SetPixel(x - j, y + i, color); // point 7: symétrie du point 5 par rapport à l'axe Y
-            image.SetPixel(x - j, y - i, color); // point 8: symétrie du point 7 par rapport à l'axe X
+            image.setPixel(x - j, y + i, color); // point 7: symétrie du point 5 par rapport à l'axe Y
+            image.setPixel(x - j, y - i, color); // point 8: symétrie du point 7 par rapport à l'axe X
         }
     }
 }

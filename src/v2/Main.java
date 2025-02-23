@@ -4,47 +4,37 @@ import v2.shapes.*;
 
 import java.awt.Color;
 
-/**
- * The Main class serves as an entry point to demonstrate drawing various shapes 
- * on an image with specified dimensions and colors.
- */
 public class Main {
-    /**
-     * The main method initializes an image, draws various shapes onto it, 
-     * and then saves the resulting image to a file.
-     * 
-     * @param args Command line arguments (not used).
-     */
     public static void main(String[] args) {
         int width = 400;
         Image image = new Image(width);
 
         Point p = new Point(10, 50, Color.BLUE);
-        p.Draw(image);
+        p.draw(image);
 
         HLine hline = new HLine(new Point(10, 10), 120, Color.RED);
-        hline.Draw(image);
+        hline.draw(image);
 
         VLine vline = new VLine(new Point(20, 20), 120, Color.PINK);
-        vline.Draw(image);
+        vline.draw(image);
 
         Line line1 = new Line(new Point(30, 30), new Point(50, 120), Color.GREEN);
-        line1.Draw(image);
+        line1.draw(image);
 
         Line line2 = new Line(new Point(300, 150), new Point(70, 130), Color.MAGENTA);
-        line2.Draw(image);
+        line2.draw(image);
 
         Triangle triangle = new Triangle(new Point(25, 250), new Point(200, 200), new Point(100, 300));
-        triangle.Draw(image);
+        triangle.draw(image);
 
         Rectangle rectangle = new Rectangle(new Point(100, 120), 220, 150, Color.MAGENTA);
-        rectangle.Draw(image);
+        rectangle.draw(image);
 
         Square square = new Square(new Point(300, 10), 40, Color.GRAY);
-        square.Draw(image);
+        square.draw(image);
 
         Circle circle = new Circle(new Point(150, 150), 100, Color.ORANGE);
-        circle.Draw(image);
+        circle.draw(image);
 
         Point[] points = {
                 new Point(10, 310),
@@ -57,8 +47,8 @@ public class Main {
 //        polyLine.Draw(image);
 
         Polygon polygon = new Polygon(points, Color.CYAN);
-        polygon.Draw(image);
+        polygon.draw(image);
 
-        image.Save("test2.png");
+        image.save("test2.png");
     }
 }
